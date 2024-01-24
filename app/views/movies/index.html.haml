@@ -1,0 +1,35 @@
+!!!
+%html
+  %head
+    = stylesheet_link_tag 'index', :media => 'all'
+    = csrf_meta_tags
+    = csp_meta_tag
+    %title MovieList
+  %body
+    = render 'shared/header_index'
+    - flash.each do |message_type, message|
+      %div{:class => "flash-message #{ message_type }" }
+        = message
+    .container
+      .row
+        - @movies.each do |movie|
+          .card
+            .card-header
+              = image_tag movie.image, class: 'movie-img'
+            .card-body
+              %p= movie.title
+              = link_to 'Edit', edit_movie_path(movie.id), class: 'btn', data: { turbo_method: :get }
+              %br
+              %div{:id => "star-rate-#{ movie.id }"}
+              = link_to delete_update_path(movie.id), data: { turbo_method: :patch } do
+                %i.fa.fa-trash.icon-size
+          :javascript
+            $('#star-rate-#{movie.id}').empty();
+            $('#star-rate-#{movie.id}').raty({
+              size: 36,
+              starOn: "#{asset_path 'star-on.png'}",
+              starOff: "#{asset_path 'star-off.png'}",
+              half: false,
+              readOnly: true,
+              score: #{ movie.evaluation },
+            });

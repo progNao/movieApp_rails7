@@ -1,0 +1,121 @@
+.container {
+  width: 90%;
+  margin: 50px auto;
+  border-radius: 30px;
+  background: linear-gradient(to right, #91eae4, #86a8e7, #7f7fd5);
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: wrap;
+  align-items: center;
+}
+
+.card {
+  width: 10%;
+  height: 70%;
+  background: #fff;
+  border: 1px solid #ccc;
+  margin: 10px;
+  transition: 0.3s;
+}
+
+.card-header {
+  text-align: center;
+  padding: 20px 10px;
+  background: linear-gradient(to right, #ff41ff, #ff4b2b);
+  color: #fff;
+}
+
+.movie-img {
+  width: 9em;
+  align-items: center;
+}
+
+.card-body {
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.card-body .btn {
+  display: block;
+  color: #fff;
+  text-align: center;
+  background: linear-gradient(to right, #ff41ff, #ff4b2b);
+  text-decoration: none;
+  margin-top: 30px;
+  padding: 10px 5px;
+  transition: 0.3s;
+}
+
+.card-body .btn:hover {
+  transform: scale(1.1);
+}
+
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.25);
+}
+
+.input-layout {
+  font-size: 14px;
+  font-weight: bold;
+  border: solid gray 2px;
+  border-radius: 10px;
+}
+
+#star {
+  text-align: center;
+}
+
+img {
+  width: 20px;
+}
+
+.flash-message {
+  border-radius: 5px;
+  padding: 16px 24px;
+  margin: 0 auto;
+  width: 50%;
+  text-align: center;
+}
+ 
+.flash-message.notice {
+  background-color: #bcdfff;
+  color: #0067C0;
+  border: solid 1px #0067C0;
+}
+ 
+.flash-message.alert {
+  background-color: #ffd4d1;
+  color: #930403;
+  border: solid 1px #930403;
+}
+
+.icon-size {
+  font-size: 3vh;
+  color: #c33232;
+}
+
+@media screen and (max-width: 1000px) {
+  .card {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .container {
+    width: 100%;
+  }
+
+  .heading {
+    padding: 20px;
+    font-size: 30px;
+  }
+
+  .card {
+    width: 80%;
+  }
+}

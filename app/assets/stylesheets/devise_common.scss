@@ -1,0 +1,114 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #fefefe;
+  font-family: sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 80vh;
+  margin: 50px auto;
+  border-radius: 30px;
+  background: linear-gradient(to right, #91eae4, #86a8e7, #7f7fd5);
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 60vh;
+  margin: 0 auto;
+  border-radius: 70px;
+  background: linear-gradient(to right, #E96D71 0%, #FAD7A1 80%, #FAD7A1 100%);
+}
+
+.label-layout {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 20px;
+  color: #ef15ca;
+  text-align: center;
+}
+
+.input-layout {
+  font-size: 18px;
+  font-weight: bold;
+  border: solid gray 2px;
+  border-radius: 20px;
+  height: 5vh;
+}
+
+.message {
+  text-align: center;
+  color: #ef15ca;
+}
+
+.checkbox {
+  text-align: center;
+  margin: 10px;
+}
+
+.btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid gray 2px;
+  border-radius: 25px;
+  color: #fefefe;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0 auto;
+  height: 10px;
+  justify-content: center;
+  padding: 20px 50px;
+  position: relative;
+  z-index: 2;
+  will-change: transform, filter;
+  transform-style: preserve-3d;
+  transition: all .3s ease-out;
+  cursor: pointer;
+}
+
+.link {
+  text-align: center;
+}
+
+.checkbox {
+  text-align: center;
+  margin: 10px;
+}
+
+.btn {
+  background: #3ddbbe;
+  width: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    width: 90%;
+  }
+  .card {
+    width: 80%;
+  }
+  .label-layout {
+    font-size: 12px;
+    margin: 0 20px;
+    color: #ef15ca;
+  }
+  .input-layout {
+    font-size: 12px;
+    border: solid gray 2px;
+    border-radius: 20px;
+    height: 5vh;
+  }
+}

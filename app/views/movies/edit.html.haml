@@ -1,0 +1,56 @@
+!!!
+%html
+  %head
+    = stylesheet_link_tag 'new_edit_common', :media => 'all'
+    = csrf_meta_tags
+    = csp_meta_tag
+    %title EditMovie
+  %body
+    = render 'shared/header'
+    .container
+      = form_with model: @movie, method: :put do |f|
+        .row
+          .left-container
+            %div{data: {controller: "image-preview"}}
+              = f.label :image, class: "form-image" do
+                = fa_icon "image 5x awesome-color"
+                = f.file_field :image, data: { "image-preview-target": "input", action: "image-preview#readImage" }
+              %ul{data: {image: {preview: {target: "output"}}}}
+          .right-container
+            %h3.main-text Information
+            = link_to delete_update_path(@movie.id), data: { turbo_method: :patch } do
+              %i.fa.fa-trash.icon-size
+            .label-layout
+              %br
+              = f.label :title, 'Title'
+              %br
+              = f.text_field :title, class: 'input-layout', placeholder: @movie.title
+            .label-layout
+              %br
+              = f.label :description, 'Description'
+              %br
+              = f.text_area :description, class: 'input-layout', placeholder: @movie.description
+            .label-layout
+              %br
+              = f.label :genre, 'Genre'
+              %br
+              = f.select :genre, [['test', 'test'], ['test', 'test'], ['test', 'test']], class: 'input-layout'
+            .label-layout
+              %br
+              = f.label :evaluation, 'Evaluation'
+              %br
+            #star
+              = f.hidden_field :evaluation, class: 'input-layout', id: :review_star
+              #post-raty
+            .row
+              = link_to 'Cancel', movies_path, class: 'btn cancel-btn'
+              = f.submit 'Update', class: 'btn action-btn'
+    :javascript
+      $('#star').raty({
+        size     : 36,
+        starOn: "#{asset_path 'star-on.png'}",
+        starOff: "#{asset_path 'star-off.png'}",
+        scoreName: 'movie[evaluation]',
+        half: false,
+        score: "#{@movie.evaluation}",
+      });

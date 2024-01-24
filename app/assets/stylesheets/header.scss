@@ -1,0 +1,88 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #fefefe;
+  font-family: sans-serif;
+}
+
+header {
+  margin: 30px auto;
+  font-family: sans-serif;
+  background: linear-gradient(to right, #91eae4, #86a8e7, #7f7fd5);
+  min-height: 50px;
+  padding: 0px;
+  width: 90%;
+  border-radius: 30px;
+}
+
+.header {
+  overflow: hidden;
+  padding: 10px 20px;
+}
+
+.header-right {
+  float: right;
+  display: flex;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.header a.logo {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+}
+
+.username {
+  margin: auto;
+  color: #000;
+}
+
+.btn-header {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid gray 2px;
+  border-radius: 25px;
+  color: #fff;
+  background: #c33232;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 5px;
+  width: 10px;
+  height: 10px;
+  justify-content: center;
+  padding: 20px 50px;
+  position: relative;
+  z-index: 2;
+  will-change: transform, filter;
+  transform-style: preserve-3d;
+  transition: all .3s ease-out;
+}
+
+.logout {
+  background: #c33232;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .header-right {
+    float: none;
+  }
+  input[type=search] {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .header-right {
+    float: none;
+  }
+}

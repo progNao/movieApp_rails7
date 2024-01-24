@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    = stylesheet_link_tag 'header', :media => 'all'
+    = stylesheet_link_tag 'header_index', :media => 'all'
+    = csrf_meta_tags
+    = csp_meta_tag
+    %script{src: "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"}
+    %script{src: "https://cdnjs.cloudflare.com/ajax/libs/raty/2.9.0/jquery.raty.js"}
+  %body
+    %header
+      .header
+        %a.logo{href: movies_path}MovieApp
+        .header-right
+          %form.header-form
+            %input{type: 'search'}
+          .username
+            = current_user.username
+          &nbsp;
+          = link_to 'Create', new_movie_path, class: 'btn-header create', data: { turbo_method: :get }
+          = link_to 'Logout', destroy_user_session_path, class: 'btn-header logout', data: { turbo_method: :delete }

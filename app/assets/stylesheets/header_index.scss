@@ -1,0 +1,21 @@
+.create {
+  text-decoration: none;
+  background: #3c4aed;
+}
+
+.header-form {
+  width: 600px;
+  margin: auto;
+}
+
+input[type=search] {
+  width: 400px;
+  height: 30px;
+  font-size: 16px;
+  padding: 0px 20px 0px 40px;
+  border-radius: 40px;
+  outline: none;
+  border: solid gray 2px;
+  background: url('Search.png') 7px center no-repeat;
+  background-color: white;
+}
