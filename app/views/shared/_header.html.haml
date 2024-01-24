@@ -11,6 +11,8 @@
       .header
         %a.logo{href: movies_path}MovieApp
         .header-right
+          %form.header-form
+            %input{type: 'search'}
           .username
             = current_user.username
           &nbsp;

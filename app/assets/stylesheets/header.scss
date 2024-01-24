@@ -72,17 +72,36 @@ header {
   text-decoration: none;
 }
 
-@media screen and (max-width: 1000px) {
-  .header-right {
-    float: none;
-  }
-  input[type=search] {
-    width: 70%;
-  }
+nav {
+  display: none;
 }
 
-@media screen and (max-width: 620px) {
-  .header-right {
-    float: none;
+#navbtn {
+  display: none;
+}
+
+@media screen and (max-width: 480px) {
+  input[type=search] {
+    width: 180px;
+    margin: 0;
+  }
+  header {
+    border-radius: 0px;
+    width: 99%;
+    margin: 15px auto;
+  }
+  .header a.logo {
+    font-size: 18px;
+  }
+  .btn-header {
+    display: none;
+  }
+  .username {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 0 0 auto;
+  }
+  .header-form {
+    display: none;
   }
 }
