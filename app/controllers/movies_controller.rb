@@ -1,7 +1,8 @@
 class MoviesController < ApplicationController
   def index
     if Movie.where(user_id: current_user.id)
-      @movies = Movie.where(is_delete: false, user_id: current_user.id)
+      @q = Movie.ransack(params[:q])
+      @movies = @q.result(distinct: true).where(is_delete: false, user_id: current_user.id)
     else
       @movies = []
     end

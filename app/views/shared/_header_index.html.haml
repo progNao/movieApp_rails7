@@ -22,8 +22,10 @@
         &nbsp;
         %a.logo{href: movies_path}MovieApp
         .header-right
-          %form.header-form
-            %input{type: 'search'}
+          = search_form_for @q, class: "header-form" do |f|
+            = f.search_field :title_cont
+            %button{type: "submit", class: "search"}
+              %i.fa.fa-search
           .username
             【 #{current_user.username} 】
           &nbsp;
