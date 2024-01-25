@@ -24,7 +24,7 @@
           .username
             【 #{current_user.username} 】
           &nbsp;
-          = link_to 'Logout', destroy_user_session_path, class: 'btn-header logout', data: { turbo_method: :delete }
+          = link_to 'Logout', destroy_user_session_path, class: 'btn-header logout', data: { turbo_method: :get }
     :javascript
       jQuery(document).on('turbo:load', function() {
         document.querySelector('html').classList.remove('open');
