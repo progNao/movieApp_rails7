@@ -16,7 +16,7 @@
               = link_to 'Create', new_movie_path, class: 'create', data: { turbo_method: :get }
             %br
             %li
-              = link_to 'Logout', destroy_user_session_path, class: 'logout', data: { turbo_method: :delete }
+              = link_to 'Logout', destroy_user_session_path, class: 'logout', data: { turbo_method: :get }
         %button#navbtn{type: "button"}
         &nbsp;
         %a.logo{href: movies_path}MovieApp
