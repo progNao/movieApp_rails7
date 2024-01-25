@@ -5,14 +5,18 @@
     %title EditMovie
   %body
     = render 'shared/header'
+    - flash.each do |message_type, message|
+      %div{:class => "flash-message #{ message_type }" }
+        = message
     .container
       = form_with model: @movie, method: :put do |f|
+        = render 'shared/error_messages', object: f.object
         .row
           .left-container
             %div{data: {controller: "image-preview"}}
               = f.label :image, class: "form-image" do
                 = fa_icon "image 5x awesome-color"
-                = f.file_field :image, data: { "image-preview-target": "input", action: "image-preview#readImage" }
+                = f.file_field :image, required: true, data: { "image-preview-target": "input", action: "image-preview#readImage" }
               %ul{data: {image: {preview: {target: "output"}}}}
           .right-container
             %h3.main-text Information
@@ -22,17 +26,17 @@
               %br
               = f.label :title, 'Title'
               %br
-              = f.text_field :title, class: 'input-layout', placeholder: @movie.title
+              = f.text_field :title, required: true, class: 'input-layout', placeholder: @movie.title
             .label-layout
               %br
               = f.label :description, 'Description'
               %br
-              = f.text_area :description, class: 'input-layout', placeholder: @movie.description
+              = f.text_area :description, required: true, class: 'input-layout', placeholder: @movie.description
             .label-layout
               %br
               = f.label :genre, 'Genre'
               %br
-              = f.select :genre, [['test', 'test'], ['test', 'test'], ['test', 'test']], class: 'input-layout'
+              = f.select :genre, @genres, class: 'input-layout'
             .label-layout
               %br
               = f.label :evaluation, 'Evaluation'

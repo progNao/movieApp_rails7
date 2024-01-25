@@ -1,8 +1,15 @@
 <%= stylesheet_link_tag 'devise_common', :media => "all" %>
 
+<% flash.each do |message_type, message| %>
+  <div class="flash-message <%= message_type %>">
+    <%= message %>
+  </div>
+<% end %>
+
 <div class="container">
   <div class="card">
     <%= form_with model: @user, url: user_session_path do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
       <h3 class="message">Login</h3>
       
       <br />

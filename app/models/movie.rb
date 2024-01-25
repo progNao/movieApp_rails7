@@ -1,11 +1,11 @@
 class Movie < ApplicationRecord
   has_one_attached :image
   validates :title,
-    presence: true
+    presence: true, length: { maximum: 50 }
   validates :genre,
-    presence: true
+    presence: true, length: { maximum: 30 }
   validates :evaluation,
-    presence: true, length: { minimum: 0, maximum: 5 }
+    presence: true, length: { minimum: 1, maximum: 5 }
   validates :is_delete,
     inclusion: { in: [true, false] }
   belongs_to :user

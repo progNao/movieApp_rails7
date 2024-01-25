@@ -1,0 +1,5 @@
+- if object.errors.any?
+  .alert-danger
+    %ul
+      - object.errors.full_messages.each do |msg|
+        %li.error_messages= msg

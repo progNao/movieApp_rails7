@@ -9,6 +9,7 @@ gem "image_processing", ">= 1.2"
 gem "devise"
 gem 'mini_magick'
 gem 'ransack'
+gem 'rails-i18n'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.2"

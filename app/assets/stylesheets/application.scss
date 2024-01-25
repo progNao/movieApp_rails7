@@ -18,3 +18,17 @@
 * {
     font-family: sans-serif;
 }
+
+.alert-danger {
+  border-radius: 15px;
+  padding: 16px 24px;
+  margin: 0 50px;
+  text-align: center;
+  background-color: #ffd4d1;
+  color: #930403;
+  border: solid 1px #930403;
+}
+
+.error_messages {
+  font-size: 12px;
+}

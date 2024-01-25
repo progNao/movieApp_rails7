@@ -1,0 +1,19 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+      movie: 映画
+    attributes:
+      user:
+        id: ユーザーID
+        username: ユーザー名
+        email: メールアドレス
+        password: パスワード
+      movie:
+        id: 映画ID
+        title: タイトル
+        description: 概要
+        genre: ジャンル
+        evaluation: 評価
+        is_delete: 削除フラグ
+        image: 画像
