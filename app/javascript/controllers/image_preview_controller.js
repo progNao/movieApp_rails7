@@ -10,7 +10,6 @@ export default class extends Controller {
   }
 
   readImage(e) {
-    console.log(11111111)
     let input = this.inputTarget;
     let output = this.outputTarget;
 

@@ -2,8 +2,6 @@
 %html
   %head
     = stylesheet_link_tag 'new_edit_common', :media => 'all'
-    = csrf_meta_tags
-    = csp_meta_tag
     %title EditMovie
   %body
     = render 'shared/header'
@@ -46,7 +44,7 @@
               = link_to 'Cancel', movies_path, class: 'btn cancel-btn'
               = f.submit 'Update', class: 'btn action-btn'
     :javascript
-      $('#star').raty({
+      jQuery('#star').raty({
         size     : 36,
         starOn: "#{asset_path 'star-on.png'}",
         starOff: "#{asset_path 'star-off.png'}",

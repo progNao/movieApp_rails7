@@ -2,7 +2,8 @@
   width: 90%;
   margin: 50px auto;
   border-radius: 30px;
-  background: linear-gradient(to right, #91eae4, #86a8e7, #7f7fd5);
+  background-color: #A9C9FF;
+  background-image: linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 100%);
 }
 
 .row {
@@ -24,7 +25,8 @@
 .card-header {
   text-align: center;
   padding: 20px 10px;
-  background: linear-gradient(to right, #ff41ff, #ff4b2b);
+  background-color: #FF3CAC;
+  background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
   color: #fff;
 }
 
@@ -43,11 +45,13 @@
   display: block;
   color: #fff;
   text-align: center;
-  background: linear-gradient(to right, #ff41ff, #ff4b2b);
+  background-color: #08AEEA;
+  background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
   text-decoration: none;
   margin-top: 30px;
   padding: 10px 5px;
   transition: 0.3s;
+  border-radius: 10px;
 }
 
 .card-body .btn:hover {
@@ -99,23 +103,104 @@ img {
   color: #c33232;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 480px) {
+  .container {
+    width: 90%;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap;
+    align-items: center;
+  }
+  
   .card {
     width: 40%;
+    height: 60%;
+    background: #fff;
+    border: 1px solid #ccc;
+    margin: 5px;
+    transition: 0.3s;
   }
-}
-
-@media screen and (max-width: 620px) {
-  .container {
-    width: 100%;
+  
+  .card-header {
+    text-align: center;
+    padding: 10px;
+    color: #fff;
   }
-
+  
+  .movie-img {
+    width: 7em;
+    align-items: center;
+  }
+  
+  .card-body {
+    padding: 20px 10px;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  .card-body .btn {
+    display: block;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 20px;
+    padding: 10px 5px;
+    transition: 0.3s;
+  }
+  
+  .card-body .btn:hover {
+    transform: scale(1.1);
+  }
+  
+  .card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.25);
+  }
+  
+  .input-layout {
+    font-size: 14px;
+    font-weight: bold;
+    border: solid gray 2px;
+    border-radius: 10px;
+  }
+  
+  #star {
+    text-align: center;
+  }
+  
+  img {
+    width: 20px;
+  }
+  
+  .flash-message {
+    border-radius: 5px;
+    padding: 16px 24px;
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+  }
+   
+  .flash-message.notice {
+    background-color: #bcdfff;
+    color: #0067C0;
+    border: solid 1px #0067C0;
+  }
+   
+  .flash-message.alert {
+    background-color: #ffd4d1;
+    color: #930403;
+    border: solid 1px #930403;
+  }
+  
+  .icon-size {
+    font-size: 3vh;
+    color: #c33232;
+  }
   .heading {
     padding: 20px;
     font-size: 30px;
-  }
-
-  .card {
-    width: 80%;
   }
 }

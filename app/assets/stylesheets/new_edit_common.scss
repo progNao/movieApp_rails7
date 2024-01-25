@@ -1,5 +1,6 @@
 body {
   color: #fff;
+  font-family: sans-serif;
 }
 
 .container {
@@ -11,7 +12,8 @@ body {
   width: 70%;
   margin: 50px auto;
   border-radius: 30px;
-  background: linear-gradient(to right, #91eae4, #86a8e7, #7f7fd5);
+  background-color: #A9C9FF;
+  background-image: linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 100%);
 }
 
 .row {
@@ -43,6 +45,7 @@ body {
   border-radius: 30px;
   border: dashed;
   border-color: #FAD7A1;
+  display: table;
 }
 
 .movie-png {
@@ -66,6 +69,10 @@ body {
   font-weight: bold;
   border: solid gray 2px;
   border-radius: 10px;
+}
+
+.text_area {
+  box-sizing:border-box;
 }
 
 select {
@@ -184,5 +191,6 @@ select {
     padding: 10px;
     margin: 20px;
     border-radius: 30px;
+    display: table;
   }
 }

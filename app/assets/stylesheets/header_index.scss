@@ -1,13 +1,3 @@
-.create {
-  text-decoration: none;
-  background: #3c4aed;
-}
-
-.logout {
-  text-decoration: none;
-  background: #c33232;
-}
-
 .header-form {
   width: 600px;
   margin: auto;
@@ -51,81 +41,5 @@ nav {
   }
   .header-form {
     display: none;
-  }
-  .nav{
-    display: block;
-    position: fixed;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100vh;
-    background: rgba(134,170,255,0.9);
-    color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: left 0.5s;
-  }
-  .nav ul{
-    list-style:none;
-  }
-  .nav li:not(:last-child){
-    margin-bottom: 30px;
-  }
-  .nav a{
-    color: #ffffff;
-    border: solid gray 2px;
-    border-radius: 25px;
-    font-size: 14px;
-    font-weight: bold;
-    margin: 5px;
-    width: 10px;
-    height: 10px;
-    padding: 20px 50px;
-  }
-  #navbtn{
-    display: block;
-    padding: 0;
-    outline: none;
-    border: none;
-    background: none;
-    width: 30px;
-    height: 20px;
-    cursor: pointer;
-  }
-  #navbtn::before,
-  #navbtn::after{
-    content : '';
-    display: block;
-    height: 1px;
-    background-color: #333333;
-    transform: translateY(10px);
-    transition: 0.3s ease-in-out;
-  }
-  #navbtn::before{
-    transform: translateY(-10px);
-    box-shadow: 0 10px #333333;
-  }
-  .open #navbtn{
-    z-index: 100;
-  }
-  .open #navbtn::before{
-    transform: rotate(-45deg);
-    box-shadow: none;
-  }
-  .open #navbtn::after{
-    transform: rotate(45deg);
-    box-shadow: none;
-  }
-  .open .nav{
-    left: 0;
-  }
-  
-  .create {
-    background: #3c4aed;
-  }
-  
-  .logout {
-    background: #c33232;
   }
 }
