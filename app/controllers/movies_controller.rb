@@ -23,10 +23,10 @@ class MoviesController < ApplicationController
     @movie.image == params[:movie][:image].read
     @movie.is_delete = false
     if @movie.save
-      flash[:notice] = "You could create movie!"
+      flash[:notice] = "映画を登録しました!"
       redirect_to movies_path
     else
-      flash.now[:alert] = "Could not create movie..."
+      flash.now[:alert] = "映画を登録できませんでした..."
       @genres = $movie_genres
       render :new, status: :unprocessable_entity
     end
@@ -42,10 +42,10 @@ class MoviesController < ApplicationController
     @movie.image == params[:movie][:image].read
     @movie.is_delete = false
     if @movie.update(permit_params.merge(user_id: current_user.id))
-      flash[:notice] = "You could update movie!"
+      flash[:notice] = "映画を更新しました!"
       redirect_to movies_path
     else
-      flash.now[:alert] = "Could not update movie..."
+      flash.now[:alert] = "映画を更新できませんでした..."
       @genres = $movie_genres
       render :edit, status: :unprocessable_entity
     end
@@ -54,11 +54,11 @@ class MoviesController < ApplicationController
   def delete_update
     @movie = Movie.find_by(id: params[:id], user_id: current_user.id)
     if @movie.update(is_delete: true)
-      flash[:notice] = "You could delete movie."
+      flash[:alert] = "映画を削除しました."
       redirect_to movies_path
     else
-      flash[:alert] = "Could not delete movie..."
-      render :index
+      flash[:alert] = "映画を削除できませんでした..."
+      render :index, status: :unprocessable_entity
     end
   end
   
