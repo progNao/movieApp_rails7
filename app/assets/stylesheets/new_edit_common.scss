@@ -187,6 +187,10 @@ select {
   border: solid 1px #930403;
 }
 
+ol, ul {
+  list-style-type: none;
+}
+
 @media screen and (max-width: 1000px) {
   .container {
     width: 90%;
