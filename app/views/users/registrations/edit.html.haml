@@ -1,0 +1,47 @@
+= stylesheet_link_tag 'devise_common', media: 'all'
+= stylesheet_link_tag 'user_edit', media: 'all'
+
+= render "shared/header"
+
+- flash.each do |message_type, message|
+  .flash-message{ class: "flash-message #{message_type}" }
+    = message
+
+.container
+  .card
+    = form_with model: @user, url: registration_path(resource_name), method: :put do |f|
+      = render 'shared/error_messages', object: f.object
+      %h3.message Mypage
+
+      %br
+
+      .field.label-layout
+        = f.label :username
+        %br
+        = f.text_field :username, autofocus: true, autocomplete: "username", class: "input-layout"
+
+      .field.label-layout
+        = f.label :email
+        %br
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: "input-layout"
+
+      .field.label-layout
+        = f.label :password
+        - if @minimum_password_length
+          %em (#{@minimum_password_length} characters minimum)
+        %br
+        = f.password_field :password, autocomplete: "new-password", class: "input-layout"
+
+      .field.label-layout
+        = f.label :password_confirmation
+        %br
+        = f.password_field :password_confirmation, autocomplete: "new-password", class: "input-layout"
+
+      .field.label-layout
+        = f.label :current_password
+        %br
+        = f.password_field :current_password, autocomplete: "current-password", class: "input-layout"
+
+      .actions
+        = link_to 'Back', :back
+        = f.submit "Update", class: "btn"

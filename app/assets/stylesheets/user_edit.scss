@@ -1,0 +1,14 @@
+.btn {
+  margin-top: 10px;
+}
+
+em {
+  font-size: 9px;
+}
+
+.cancel-btn,
+.cancel-btn::before {
+    background-color: #f52a2a;
+    background-image: linear-gradient(90deg, #f52a2a 0%, #f52a2a 100%);
+    text-decoration: none;
+}

@@ -1,4 +1,6 @@
 class MoviesController < ApplicationController
+  before_action :authenticate_user!
+
   $movie_genres = [["アクション", "アクション"], ["コメディ", "コメディ"], ["ドラマ", "ドラマ"],
     ["ホラー", "ホラー"], ["サイエンスフィクション", "サイエンスフィクション"], ["ロマンス", "ロマンス"],
     ["ファンタジー", "ファンタジー"], ["ミステリー", "ミステリー"], ["スリラー", "スリラー"],

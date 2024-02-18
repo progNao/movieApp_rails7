@@ -9,6 +9,8 @@ ja:
         username: ユーザー名
         email: メールアドレス
         password: パスワード
+        password_confirmation: パスワード確認
+        current_password: 現在のパスワード
       movie:
         id: 映画ID
         title: タイトル

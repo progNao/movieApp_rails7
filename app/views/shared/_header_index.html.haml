@@ -21,6 +21,10 @@
         %button#navbtn{type: "button"}
         &nbsp;
         %a.logo{href: movies_path}MovieApp
+        &nbsp;
+        &nbsp;
+        = link_to edit_user_registration_path do
+          = fa_icon "user 2x awesome-color"
         .header-right
           = search_form_for @q, class: "header-form" do |f|
             = f.search_field :title_cont
